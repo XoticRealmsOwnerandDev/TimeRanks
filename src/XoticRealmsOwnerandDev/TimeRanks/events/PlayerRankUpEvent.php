@@ -1,6 +1,6 @@
 <?php
 
-namespace TimeRanks\events;
+namespace XoticRealmsOwnerandDev/TimeRanks/events;
 
 use pocketmine\event\Cancellable;
 use pocketmine\event\plugin\PluginEvent;
