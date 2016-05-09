@@ -1,6 +1,6 @@
 <?php
 
-namespace TimeRanks;
+namespace XoticRealmsOwnerandDev/TimeRanks;
 
 use pocketmine\scheduler\PluginTask;
 
