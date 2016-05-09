@@ -2,7 +2,6 @@
 
 namespace XoticRealmsOwnerandDev/TimeRanks
 
-
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
@@ -10,7 +9,9 @@ use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use TimeRanks\events\PlayerRankUpEvent;
+
 class Main extends PluginBase{
+    
     public $ranks;
     /**@var \_64FF00\PurePerms\PurePerms*/
     public $purePerms;
@@ -19,6 +20,7 @@ class Main extends PluginBase{
     /**@var TimeRanksCommand*/
     public $command;
     public $default;
+    
     public function onEnable(){
         @mkdir($this->getDataFolder());
         # Groups config
@@ -57,9 +59,11 @@ class Main extends PluginBase{
         # Command
         $this->command = new TimeRanksCommand($this);
     }
+    
     public function onDisable(){
         $this->data->save();
     }
+    
     public function checkRank(Player $player){
         if(!$player->hasPermission("timeranks.exempt")){
             foreach($this->ranks as $rank => $values){
@@ -81,6 +85,7 @@ class Main extends PluginBase{
             }
         }
     }
+    
     public function getRank($player){
         $lowerRanks = [];
         foreach($this->ranks as $rank => $values){
@@ -96,6 +101,7 @@ class Main extends PluginBase{
         arsort($lowerRanks);
         return array_keys($lowerRanks)[0];
     }
+    
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
         if(strtolower($command->getName()) === "timeranks"){
             $this->command->run($sender, $args);
