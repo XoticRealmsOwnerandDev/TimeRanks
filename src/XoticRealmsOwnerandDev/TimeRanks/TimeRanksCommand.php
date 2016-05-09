@@ -1,11 +1,16 @@
 <?php
+
 namespace TimeRanks;
+
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
+
 class TimeRanksCommand{
+    
     public function __construct(Main $plugin){
         $this->plugin = $plugin;
     }
+    
     public function run(CommandSender $sender, array $args){
         if(!isset($args[0])){
             $sender->sendMessage("§3Time§4Ranks Plugin By KurutaSora");
@@ -46,4 +51,5 @@ class TimeRanksCommand{
                 return false;
         }
     }
+    
 }
