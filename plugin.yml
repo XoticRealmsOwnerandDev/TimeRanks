@@ -1,8 +1,18 @@
----
-DefaultRank:
- default: true
- pureperms_group: Default
-ExampleRank:
- minutes: 30
- pureperms_group: Example
-...
+name: TimeRanks
+main: 
+version: 1.0.0
+api: 2.0.0
+author: XoticRealmsOwnerandDev
+
+commands:
+ timeranks:
+  description: The main command
+  usage: "/tr check [player]"
+  permission: timeranks.command
+permissions:
+ timeranks.command:
+  description: "Allow players to use /play time command"
+  default: true
+ timeranks.exempt:
+  description: "Allow's players to be exempt from ranking up"
+  default: op
