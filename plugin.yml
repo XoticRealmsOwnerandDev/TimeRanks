@@ -1,1 +1,8 @@
-
+---
+DefaultRank:
+ default: true
+ pureperms_group: Default
+ExampleRank:
+ minutes: 30
+ pureperms_group: Example
+...
